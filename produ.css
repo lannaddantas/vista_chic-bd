@@ -1,0 +1,120 @@
+body{
+    background-image: src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEVBeXulKi2Lm0%2FPp%2F%2BiMA9ns%2F2JLQKJ6wuMactH1c4wxai0Oaj03IrXVKg189eN17uoOiDivaV%2BU9i0rzjLJ7Y5E55yYHU3llo5Et5hkkVt%2Fei2ShaoOiVJlQ4NXHY2ts6Yep%2FNmA5RPCan3y1qJ2%2BaMti01C8OLyNMQLiVBP8Zu87DVzNQdKLKZUe2KtjAAPE6gEQ0NOrcIJNcilf56orb6HrbwOFpioW%2Bs9oiP%2FksxgyjGivM4JGpLjZ9hiaJTwCzlP7Hc%2F1627Xrv7tFr1YSpAr4IKEn5FxuF4AwboslvVckmKbmc7HWZ0z1SB%2BM1zpDYk0mCBtGLtRRFTAGIdC6TKcGN6C9lCXQoLVJkHRXDgyBledRoICFTrMlufy1Cwervze5vNPaZ75t%2BQcw1pPbA%2B1EfRnVR0lwG%2FcmCh2R%2B0be4MOXP%2FztVKHkQNYFFTNVC4CHa45iNha2c2piVyOzTFw3WawxWamr0KzWnzXVXv9p4g4%2FNgTdPxGImjui7St3vQBjuzDcu8B%2BBi0pdFFeVTizkJICHfJl98FQHqKBCGhRNfIU7t6OTOaWoZpYna%2B0tg%3D%3D&allow_caching=true&sz=w1600-h773";
+}
+.titulos h3{
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.titulos h2{
+    font-weight: normal;
+}
+
+.padrao{
+    margin-top: 100px;
+}
+
+table, th{
+    border-spacing: 0;
+}
+
+table{
+    margin: 10 auto 25px;
+    padding-top: 30px;
+    padding-left: 250px;
+    padding-right:250px;
+    table-layout: fixed;
+  width: 100%;
+}
+input[type="number"]{
+    width: 80px;
+    font-size: 18px;
+    padding: 4px;
+    margin-bottom: 15px;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+/* td{border: 1px solid #000;} */
+td{
+    width: 580px;
+    height: 100px;
+    padding-left: 15px;
+    font-size:x-large ;
+    font-family:'Libertinus Math', arial;
+
+}
+
+h2, p{
+    margin-top: 0%;
+}
+h2{
+    margin-bottom: 3px;
+}
+
+p{
+    margin-bottom: 30px;
+}
+
+th{font-size: 25px;
+    color: #fff;
+    background-color: #11340e;
+    padding: 10px;
+}
+
+table img{
+    width: 100%;
+}
+
+table a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #2d8f0d;
+}
+
+.ce{
+    text-align: center;
+}
+
+.alterar,
+.excluir{
+    margin-left: 60px;
+    font-size: 18px;
+    padding: 5px 30px;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+}
+
+.alterar{background-color: #0b0;}
+.alterar:hover{background-color: #0b0;}
+
+.excluir{background-color: #900;}
+.excluir:hover{background-color: #900;}
+
+.as:link, a:visited {
+  background-color: #11340e;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family:'Libertinus Math', arial;
+}
+
+.as:hover, a:active {
+  background-color: green;
+}
+
+.tas{
+    margin-top: 30px;
+    float: left;
+}
+
+#bt{
+    font-family: 'Libertinus Math',arial;
+    font-size: x-large;
+    background-color: #11340e;
+    color: #fff;
+}

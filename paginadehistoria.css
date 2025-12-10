@@ -1,0 +1,101 @@
+*{
+        font-family:'Libertinus Math', arial;
+
+}
+.titulos h3{
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.titulos h2{
+    font-weight: normal;
+}
+
+.padrao{
+    margin-top: 100px;
+}
+
+table, td, th{
+    border: 1px solid #000;
+    border-spacing: 0;
+        font-family:'Libertinus Math', arial;
+
+}
+
+table{
+    margin: 0 auto 25px;
+    width: 900px;
+        font-family:'Libertinus Math', arial;
+
+    
+}
+
+/* td{border: 1px solid #000;} */
+
+td, th{
+    padding: 10px;
+}
+
+th{font-size: 25px;
+    color: #fff;
+    background-color: #11340e;
+}
+
+table img{
+    width: 100%;
+}
+
+table a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #2d8f0d;
+        font-family:'Libertinus Math', arial;
+
+}
+
+.ce{
+    text-align: center;
+}
+
+.alterar,
+.excluir{
+    margin-left: 60px;
+    font-size: 18px;
+    padding: 5px 30px;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+}
+
+.alterar{background-color: #0b0;}
+.alterar:hover{background-color: #0b0;}
+
+.excluir{background-color: #900;}
+.excluir:hover{background-color: #900;}
+
+.as{
+    float: right;
+    font-size: 50px;
+    text-decoration: none;
+    
+}
+
+.as:link {
+  color: #11340e;
+}
+
+/* visited link */
+.as:visited {
+  color: red;
+}
+
+/* mouse over link */
+.as:hover {
+  color: hotpink;
+}
+
+/* selected link */
+.as:active {
+  color: blue;
+}

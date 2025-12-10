@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+ <title>Vista Chic</title>
+
+    <link rel="icon" href="img/vclogo.png">
+
+
+    <style>
+        .borda{
+          border:1px solid black;
+           border-collapse: collapse;
+        }
+
+        /* SELETOR EM ID */
+        #tabelaTarefas {
+    margin: 0 auto;         
+    border-collapse: collapse;
+    width: 80%;     
+        }   
+        
+        table{border-collapse: collapse;} th,td{border: 2px solid black; text-align: center;}
+        button{
+            margin: 50px;
+        }
+        </style>
+
+        <script>
+    function carregarUsuarios() {
+        const corpoTabela = document.getElementById("corpoTabela");
+        corpoTabela.innerHTML = ""; // limpa o conteúdo anterior
+
+        const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+        usuarios.forEach((usuario, index) => {
+            const tr = document.createElement("tr");
+
+            tr.innerHTML = `
+                <td>${usuario.nome}</td>
+                <td>${usuario.email}</td>
+                <td>${usuario.senha}</td>
+                <td><a href="#" onclick="editarUsuario(${index})"><img src="https://th.bing.com/th/id/OIP.VYLPyImFTbdn3cRentbbagAAAA?w=412&h=412&rs=1&pid=ImgDetMain" width="25" height="25" alt="Alterar"></a></td>
+                <td><a href="#" onclick="removerUsuario(${index})"><img src="https://static.vecteezy.com/system/resources/previews/026/222/153/original/delete-icon-symbol-design-illustration-vector.jpg" width="25" height="25" alt="Remover"></a></td>
+            `;
+
+            corpoTabela.appendChild(tr);
+        });
+    }
+
+    function removerUsuario(index) {
+        let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+        if (confirm("Tem certeza que deseja remover este usuário?")) {
+            usuarios.splice(index, 1);
+            localStorage.setItem("usuarios", JSON.stringify(usuarios));
+            carregarUsuarios();
+        }
+    }
+
+    function editarUsuario(index) {
+        let usuarios = JSON.parse(localStorage.getItem("usuarios"));
+        let usuario = usuarios[index];
+
+        let novoNome = prompt("Novo nome:", usuario.nome);
+        let novoEmail = prompt("Novo email:", usuario.email);
+
+        usuarios[index].nome = novoNome;
+        usuarios[index].email = novoEmail;
+
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+        carregarUsuarios();
+    }
+
+    // Carrega os usuários ao abrir a página
+    window.onload = carregarUsuarios;
+</script>
+</head>
+
+<body>
+
+    <div id="interface">
+
+        <!-- start header -->
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="paginadehistoria.html">Pagina de Historia</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="cadastro.html">Cadastro Cliente</a></li>
+                    <li><a href="cadastroproduto.html">Cadastro Produto</a></li>
+                    <li><a href="cadastroPedido.html">Cadastro Pedido</a></li>
+                    <li><a href="./tabela1/consulta_cliente.php">Consulta Cliente</a></li>
+                    <li><a href="./tabela1/consulta_produto.php">Consulta Produto</a></li>
+                    <li><a href="./tabela1/criar_indices.php">Indices</a></li>
+                </ul>
+            </nav>
+            <div class="titulo">
+                <h1>Vista Chic</h1>
+            </div>
+
+        </header>
+    </div>
+        <!-- conteúdo principal -->
+        <main>
+
+	<table id="tabelaTarefas" style="border-collapse: collapse;"> 
+    
+	<thead>
+    <tr>
+        <th colspan="5"><em>Consulta de Dados do Cadastro</em></th>
+        </tr>
+	<tr>
+    		<th>Nome</th>
+        	<th>Email</th>
+            <th>Senha</th>
+            <th>Alterar</th>
+        	<th>Remover</th>
+        </tr>
+    </thead>
+    
+<tbody id="corpoTabela">
+
+    </tbody>
+	</table>
+    <button class="enviar" onclick="window.location.href='cadastro.html'">Ir para Cadastro JSON</button>
+
+</main>
+ 
+        
+
+        <!-- rodapé -->
+        <footer class="rodape">
+            <div class="slogan">
+                <h2>Trabalho desenvolvido por: Laércio, Lanna, Maria Clara</h2>
+            </div>
+        </footer>
+    
+</body>
+</html>

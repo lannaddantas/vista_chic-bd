@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Chic</title>
+
+    <link rel="icon" href="img/vclogo.png">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="cadastro.css">
+    <style>
+        body {
+            background-image: url('./img/vcfundo.png');
+            /* LINK da imagem */
+            background-size: cover;
+            /* cobre toda a tela */
+            background-repeat: no-repeat;
+            /* não repete */
+            background-position: center;
+            /* centraliza */
+        }
+    </style>
+    <script>
+        // Capitaliza a primeira letra de cada palavra
+        function capitalizarNome(nome) {
+            return nome.toLowerCase().replace(/\b\w/g, function (letra) {
+                return letra.toUpperCase();
+            });
+        }
+
+        // Validação + Capitalização
+        function valFormulario() {
+            const nomeInput = document.getElementById('tNome');
+            const emailInput = document.getElementById('tEmail');
+            const senhaInput = document.getElementById('tSenha');
+
+            const nome = nomeInput.value.trim();
+            const email = emailInput.value.trim();
+            const senha = senhaInput.value;
+
+            if (nome === '' || email === '' || senha === '') {
+                alert('Por favor, preencha todos os campos.');
+                return false;
+            }
+
+            if (senha.length < 6 || senha.length > 8) {
+                alert('A senha deve ter entre 6 e 8 caracteres.');
+                return false;
+            }
+
+            // ✅ Capitaliza o nome antes de enviar
+            nomeInput.value = capitalizarNome(nome);
+
+            return true; // Envia o formulário
+        }
+    </script>
+</head>
+
+<body>
+    <div id="interface">
+
+        <!-- start header -->
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="paginadehistoria.html">Pagina de Historia</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="cadastro.html">Cadastro Cliente</a></li>
+                    <li><a href="cadastroproduto.html">Cadastro Produto</a></li>
+                    <li><a href="./tabela1/cadastroPedido.php">Cadastro Pedido</a></li>
+                    <li><a href="./tabela1/consulta_cliente.php">Consulta Cliente</a></li>
+                    <li><a href="./tabela1/consulta_produto.php">Consulta Produto</a></li>
+                    <li><a href="./tabela1/criar_indices.php">Indices</a></li>
+                </ul>
+            </nav>
+            <div class="titulo">
+                <h1>Vista Chic</h1>
+
+            </div>
+
+        </header>
+        <!-- conteúdo principal -->
+        <main>
+            <div class="cadastro">
+
+                <!-- <form id="formCadastro"> -->
+                <form id="formCadastro" action="tabela1/cadastro_cliente.php" method="post"
+                    onsubmit="return valFormulario();">
+                    <fieldset>
+                        <label>Nome:</label>
+                        <input type="text" id="tNome" name="tNome" placeholder="digite seu nome completo">
+
+                        <label>Email:</label>
+                        <input type="email" id="tEmail" name="tEmail" placeholder="por ex.: joaodasilva@email.com">
+
+                        <label>Senha:</label>
+                        <input type="password" id="tSenha" name="tSenha" placeholder="digite sua senha">
+
+                        <div class="botoes">
+                            <input type="reset" value="limpar" class="limpar">
+                            <input type="submit" value="enviar" class="enviar">
+                        </div>
+                    </fieldset>
+                </form>
+
+                <!-- <script>
+                    
+                    document.getElementById("formCadastro").addEventListener("submit", function (e) {
+                        e.preventDefault();
+
+                        const nome = document.getElementById("tNome").value;
+                        const email = document.getElementById("tEmail").value;
+                        const senha = document.getElementById("tSenha").value;
+
+                        const novoUsuario = { nome, email, senha };
+
+                        let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+                        usuarios.push(novoUsuario);
+                        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+                        alert("Cadastro realizado com sucesso!");
+
+                        // Limpar o formulário
+                        e.target.reset();
+                    });
+                </script> -->
+                <button class="enviar" onclick="window.location.href='consulta.html'">Ir para Consulta JSON</button>
+            </div>
+        </main>
+
+        <!-- rodapé -->
+        <footer class="rodape">
+            <div class="slogan">
+                <h2>Trabalho desenvolvido por: Laércio, Lanna, Maria Clara</h2>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

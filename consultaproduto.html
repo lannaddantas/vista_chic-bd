@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+ <title>Vista Chic</title>
+
+    <link rel="icon" href="img/vclogo.png">
+
+
+    <style>
+        .borda{
+          border:1px solid black;
+           border-collapse: collapse;
+        }
+
+        /* SELETOR EM ID */
+        #tabelaTarefas {
+    margin: 0 auto;         
+    border-collapse: collapse;
+    width: 80%;     
+        }   
+        
+        table{border-collapse: collapse;} th,td{border: 2px solid black; text-align: center;}
+        button{
+            margin: 50px;
+        }
+        </style>
+
+        <script>
+    function carregarProdutos() {
+        const corpoTabela = document.getElementById("corpoTabela");
+        corpoTabela.innerHTML = ""; // limpa o conteúdo anterior
+
+        const produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+
+        produtos.forEach((produtos, index) => {
+            const tr = document.createElement("tr");
+
+            tr.innerHTML = `
+                <td>${produtos.nome}</td>
+                <td>${produtos.preco}</td>
+                <td>${produtos.marca}</td>
+                <td>${produtos.tipo}</td>
+                <td>${produtos.tamanho}</td>
+                <td>${produtos.quantidade}</td>
+                <td><a href="#" onclick="editarProduto(${index})"><img src="https://th.bing.com/th/id/OIP.VYLPyImFTbdn3cRentbbagAAAA?w=412&h=412&rs=1&pid=ImgDetMain" width="25" height="25" alt="Alterar"></a></td>
+                <td><a href="#" onclick="removerProduto(${index})"><img src="https://static.vecteezy.com/system/resources/previews/026/222/153/original/delete-icon-symbol-design-illustration-vector.jpg" width="25" height="25" alt="Remover"></a></td>
+            `;
+
+            corpoTabela.appendChild(tr);
+        });
+    }
+
+    function removerProduto(index) {
+        let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+        if (confirm("Tem certeza que deseja remover este produto?")) {
+            produtos.splice(index, 1);
+            localStorage.setItem("produtos", JSON.stringify(produtos));
+            carregarProdutos();
+        }
+    }
+
+    function editarProduto(index) {
+        let produtos = JSON.parse(localStorage.getItem("produtos"));
+        let produto = produtos[index];
+
+        // Exemplo: pedir novos valores
+        let novoNome = prompt("Novo nome:", produto.nome);
+        let novoPreco = prompt("Novo preço:", produto.preco);
+        let novoMarca = prompt("Nova marca:", produto.marca);
+        let novoTipo = prompt("Novo tipo:", produto.tipo);
+        let novoTamanho = prompt("Novo tamanho:", produto.tamanho);
+        let novoQuantidade = prompt("Nova quantidade:", produto.quantidade);
+
+        // Atualiza o objeto
+        produtos[index].nome = novoNome;
+        produtos[index].preco = parseFloat(novoPreco);
+        produtos[index].marca = novoMarca;
+        produtos[index].tipo = novoTipo;
+        produtos[index].tamanho = novoTamanho;
+        produtos[index].quantidade = parseFloat(novoQuantidade);
+
+        // Salva de volta
+        localStorage.setItem("produtos", JSON.stringify(produtos));
+
+        // Atualiza a tabela
+        carregarProdutos();
+}
+
+    // Carrega os produtos ao abrir a página
+    window.onload = carregarProdutos;
+</script>
+</head>
+
+<body>
+
+    <div id="interface">
+
+        <!-- start header -->
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="paginadehistoria.html">Pagina de Historia</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="cadastro.html">Cadastro Cliente</a></li>
+                    <li><a href="cadastroproduto.html">Cadastro Produto</a></li>
+                    <li><a href="cadastroPedido.html">Cadastro Pedido</a></li>
+                    <li><a href="./tabela1/consulta_cliente.php">Consulta Cliente</a></li>
+                    <li><a href="./tabela1/consulta_produto.php">Consulta Produto</a></li>
+                    <li><a href="./tabela1/criar_indices.php">Indices</a></li>
+                </ul>
+            </nav>
+            <div class="titulo">
+                <h1>Vista Chic</h1>
+            </div>
+
+        </header>
+    </div>
+        <!-- conteúdo principal -->
+        <main>
+
+	<table id="tabelaTarefas" style="border-collapse: collapse;"> 
+    
+	<thead>
+    <tr>
+        <th colspan="9"><em>Consulta de Dados do Cadastro</em></th>
+        </tr>
+	<tr>
+    		<th>Nome</th>
+        	<th>Preço</th>
+            <th>Marca</th>
+        	<th>Tipo</th>
+            <th>Tamanho</th>
+        	<th>Quantidade</th>
+            <th>Faixa de Preço</th> 
+            <th>Alterar</th>
+        	<th>Remover</th>
+        </tr>
+    </thead>
+    
+<<tbody id="corpoTabela">
+    <?php foreach ($registros as $r){ ?>
+        <tr>
+            <td><?= htmlspecialchars($r['nome']) ?></td>
+            <td>R$ <?= number_format($r['preco'], 2, ',', '.') ?></td> 
+            <td><?= htmlspecialchars($r['marca']) ?></td>
+            <td><?= htmlspecialchars($r['tipo']) ?></td>
+            <td><?= htmlspecialchars($r['tamanho']) ?></td>
+            <td><?= htmlspecialchars($r['quantidade']) ?></td>
+            <td><?= htmlspecialchars($r['faixa_preco']) ?></td> 
+            
+            <td>
+                <a href="editar_tabela1.php?id=<?= $r['cod_produto'] ?>"><img src="../img/editar.jpg" alt="Editar" width="25" height="25"></a>
+            </td>
+            <td>
+                <a href="excluir_consulta.php?id=<?= $r['cod_produto'] ?>" onclick="return confirm('Tem certeza que deseja excluir este registro?');"><img src="../img/excluir.jpg" alt="Excluir" width="25" height="25"></a>
+            </td>
+        </tr>
+    <?php } ?>
+</tbody>
+	</table>
+    <button class="enviar" onclick="window.location.href='cadastroproduto.html'">Ir para Cadastro JSON</button>
+
+</main>
+ 
+        
+
+        <!-- rodapé -->
+        <footer class="rodape">
+            <div class="slogan">
+                <h2>Trabalho desenvolvido por: Laércio, Lanna, Maria Clara</h2>
+            </div>
+        </footer>
+    
+</body>
+</html>

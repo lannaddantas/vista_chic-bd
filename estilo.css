@@ -1,0 +1,191 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Math&display=swap');
+
+
+body{
+    background-color: #faebd7;
+}
+.logo{
+    float: left;
+    width: 100px;
+}
+
+.titulo{
+    float: left;
+    width: 1200px;
+    text-align: center;
+}
+
+.titulo h1{
+    color: #11340e;
+    float: left;
+    font-size: 50px;
+    margin: 0;
+    font-family: 'Libertinus Math', arial;
+}
+
+.titulo span{color: #11340e;}
+
+.titulo h2{
+    float: right;
+    font-size: 35px;
+    color: #333;
+    margin: 0;
+    padding-top: 15px;
+}
+
+.navbar{
+    background-color: #11340e;
+}
+
+.navbar ul{
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Libertinus Math', arial;
+
+}
+
+.navbar li{
+    display: inline;
+}
+
+.navbar a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px 11px;
+}
+
+.navbar a:hover{
+    background-color: rgb(83, 123, 196);
+}
+.rodape{
+    clear: both;
+    background-color: #11340e;
+    height: 110px;
+    padding: 25px 100px;
+    font-family: 'Libertinus Math',arial;
+}
+
+.slogan{
+    float: left;
+    color: #fff;
+    padding-top: 10px;
+}
+
+.copy{
+    float: right;
+    text-align: center;
+}
+
+.copy h2{
+    font-family:'Libertinus Math', arial;
+    font-style: italic;
+}
+
+.contato{
+    clear: both;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+form{
+    width: 600px;
+    margin: 50px auto;
+}
+
+input[type="text"], 
+input[type="email"], 
+textarea{
+    width: 95%;
+    font-size: 18px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+.botoes{
+    text-align: center;
+    margin-top: 15px;
+}
+
+textarea{
+    resize: none;
+}
+
+.limpar,
+.enviar{
+    font-size: 18px;
+    padding: 5px 30px;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+}
+
+.limpar{background-color: #900;}
+.limpar:hover{background-color: #b00;}
+
+.enviar{background-color: #090;}
+.enviar:hover{background-color: #0b0;}
+
+fieldset{
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 20px 30px;
+}
+.login{
+    background-image: url(../imagens/login-bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+}
+form{
+    width: 50%;
+    margin-bottom: 25px;
+}
+input[type="email"],input[type="password"]{
+    width: 95%;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #000;
+}
+
+.login div,
+.recuperar div{
+    padding-bottom: 15px;
+}
+.entrar{
+    background-color: #060;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+.login a{
+    color: #009900;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.recuperar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+.recuperar form{
+    width: 50%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 35px;
+    border-radius: 10px;
+}

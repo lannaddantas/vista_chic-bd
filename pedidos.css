@@ -1,0 +1,66 @@
+.cadastro{
+    clear: both;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+form{
+    width: 600px;
+    margin: 50px auto;
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="number"]{
+    width: 95%;
+    font-size: 18px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+
+.botoes{
+    text-align: center;
+    margin-top: 15px;
+}
+
+textarea{                                                             
+    resize: none;
+}
+
+.limpar,
+.enviar{
+    font-size: 18px;
+    padding: 5px 30px;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+}
+table img{
+    width: 80%;
+    margin-left: 60px;
+    margin-right: 10px;
+}
+
+.limpar{background-color: #900;}
+.limpar:hover{background-color: #b00;}
+
+.enviar{background-color: #090;}
+.enviar:hover{background-color: #0b0;}
+
+fieldset{
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 20px 30px;
+}
+
+input[type="radio"]{
+    background-color:#11340e
+}
+
+*{
+    /* SERVE PARA FAZER TODAS AS LABEL DO FORM SE CENTRALIZAR */
+    text-align: center;
+}
