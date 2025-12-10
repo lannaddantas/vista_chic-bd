@@ -64,8 +64,6 @@ echo "View 'vw_produtos_por_preco' criada ou atualizada com sucesso.<br>";
             cod_produto INT,
             FOREIGN KEY(cod_cliente) REFERENCES cliente (cod_cliente),
             FOREIGN KEY(cod_produto) REFERENCES produto (cod_produto)
-                ON DELETE CASCADE
-                ON UPDATE CASCADE
         )";
     ;
     $conexao->exec($sql);

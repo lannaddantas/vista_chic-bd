@@ -53,15 +53,15 @@
     <h1>Editar Registro</h1>
 
     <form method="POST">
-	  <input type="hidden" name="id" value="<?= $registro['id'] ?>">
-      <label for="nome">Nome:</label>
-      <input type="text" id="tNome" name="tNome" maxlength="20" required value="<?= htmlspecialchars($registro['tNome']) ?>"><br><br>
+	  <input type="hidden" name="id" value="<?= $registro['cod_cliente'] ?>">
+      <label for="tNome">Nome:</label>
+      <input type="text" id="tNome" name="tNome" maxlength="20" required value="<?= htmlspecialchars($registro['nome']) ?>"><br><br>
 
       <label for="tEmail">Email:</label>
-      <input type="text" id="tEmail" name="tEmail" maxlength="20" value="<?= htmlspecialchars($registro['tEmail']) ?>"><br><br>
+      <input type="text" id="tEmail" name="tEmail" maxlength="20" value="<?= htmlspecialchars($registro['email']) ?>"><br><br>
 
       <label for="tSenha">Senha:</label>
-      <input type="text" id="tSenha" name="tSenha" maxlength="20" value="<?= htmlspecialchars($registro['tSenha']) ?>"><br><br>
+      <input type="text" id="tSenha" name="tSenha" maxlength="20" value="<?= htmlspecialchars($registro['senha']) ?>"><br><br>
 
 
       <button type="submit">Salvar alterações no registro</button>

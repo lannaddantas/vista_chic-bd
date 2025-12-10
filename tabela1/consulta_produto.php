@@ -40,6 +40,7 @@
                     <li><a href="../cadastroproduto.html">Cadastro Produto</a></li>
                     <li><a href="consulta_cliente.php">Consulta Cliente</a></li>
                     <li><a href="consulta_produto.php">Consulta Produto</a></li>
+                    <li><a href="consulta_pedido.php">Consulta Pedido</a></li>
                 </ul>
             </nav>
             <div class="titulo">
@@ -78,7 +79,7 @@
                     <td><?= htmlspecialchars($r['quantidade']) ?></td>
                     <td><?= htmlspecialchars($r['faixa_preco']) ?></td>
                     <td>
-                        <a href="editar_tabela1.php?id=<?= $r['cod_produto'] ?>"><img src="../img/editar.jpg" alt="Editar" width="25" height="25"></a>
+                        <a href="editar_produto.php?id=<?= $r['cod_produto'] ?>"><img src="../img/editar.jpg" alt="Editar" width="25" height="25"></a>
                     </td>
                     <td>
                         <a href="excluir_consulta.php?id=<?= $r['cod_produto'] ?>" onclick="return confirm('Tem certeza que deseja excluir este registro?');"><img src="../img/excluir.jpg" alt="Excluir" width="25" height="25"></a>
